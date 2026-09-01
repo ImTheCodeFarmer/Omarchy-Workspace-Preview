@@ -13,6 +13,8 @@ Item {
   property bool active: false
   property int revision: 0
 
+  signal workspaceRequested()
+
   readonly property int headerHeight: Style.space(34)
   readonly property int canvasPadding: Style.space(7)
   readonly property var windows: windowSnapshot(revision)
@@ -212,5 +214,12 @@ Item {
         }
       }
     }
+  }
+
+  MouseArea {
+    anchors.fill: parent
+    acceptedButtons: Qt.LeftButton
+    cursorShape: Qt.PointingHandCursor
+    onClicked: root.workspaceRequested()
   }
 }

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "codefarmer.workspace-preview",
   "name": "Workspace Preview",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "codefarmer",
   "description": "Workspace indicators with live visual hover previews",
   "kinds": [

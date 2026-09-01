@@ -6,7 +6,8 @@ window previews when you hover over a workspace number.
 The preview combines Hyprland's window geometry with Quickshell's Wayland
 screencopy support. It shows actual window contents in their relative positions,
 including inactive workspaces when supported by the compositor. Application
-class/title cards remain as a fallback when a window cannot be captured.
+class/title cards remain as a fallback when a window cannot be captured. Click
+anywhere in the preview to switch to that workspace.
 
 ## Install
 

@@ -118,6 +118,10 @@ BarWidget {
             focused: workspaceButton.focused
             bar: root.bar
             active: preview.open
+            onWorkspaceRequested: {
+              preview.open = false
+              root.focusWorkspace(workspaceButton.modelData)
+            }
           }
         }
       }
