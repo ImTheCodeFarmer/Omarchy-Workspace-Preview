@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "workspace-preview",
+  "id": "imthecodefarmer.workspace-preview",
   "name": "Workspace Preview",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "author": "ImTheCodeFarmer",
   "description": "Workspace indicators with live visual hover previews",
   "kinds": [
@@ -15,7 +15,8 @@
     "displayName": "Workspace Preview",
     "description": "Workspace numbers with live visual window previews",
     "category": "Compositor",
-    "allowMultiple": false
+    "allowMultiple": false,
+    "defaultSection": "left"
   },
   "omarchy": {
     "clonedFrom": "omarchy.workspaces"
