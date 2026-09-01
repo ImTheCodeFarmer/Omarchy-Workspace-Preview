@@ -1,11 +1,12 @@
 # Omarchy Workspace Preview
 
-A user-owned Omarchy Shell workspace widget that displays a small window-layout
-preview when you hover over a workspace number.
+A user-owned Omarchy Shell workspace widget that displays small live visual
+window previews when you hover over a workspace number.
 
-The preview uses Hyprland's live window metadata, so it also works for inactive
-workspaces without switching to or screenshotting them. It shows relative window
-positions, application classes, titles, active/urgent state, and an empty state.
+The preview combines Hyprland's window geometry with Quickshell's Wayland
+screencopy support. It shows actual window contents in their relative positions,
+including inactive workspaces when supported by the compositor. Application
+class/title cards remain as a fallback when a window cannot be captured.
 
 ## Install
 
@@ -16,8 +17,9 @@ chmod +x install.sh
 
 The installer copies the plugin to
 `~/.config/omarchy/plugins/codefarmer.workspace-preview`, backs up the current
-plugin (when present) and `shell.json`, replaces `omarchy.workspaces` in the bar
-layout, and asks Omarchy Shell to rescan plugins.
+plugin under `~/.config/omarchy/plugin-backups` (when present), backs up
+`shell.json`, replaces `omarchy.workspaces` in the bar layout, and asks Omarchy
+Shell to rescan plugins.
 
 Plugin changes hot-reload. To force a reload:
 

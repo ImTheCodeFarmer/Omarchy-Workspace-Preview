@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Hyprland
+import Quickshell.Wayland
 import qs.Commons
 
 Item {
@@ -45,6 +46,7 @@ Item {
 
       result.push({
         address: String(toplevel.address || i),
+        toplevel: toplevel,
         x: at[0],
         y: at[1],
         width: Math.max(80, size[0]),
@@ -159,6 +161,30 @@ Item {
         border.color: modelData.urgent ? Color.urgent : Util.alpha(modelData.activated ? Color.accent : Color.foreground, 0.55)
         clip: true
 
+        ScreencopyView {
+          id: windowCapture
+          anchors.fill: parent
+          captureSource: modelData.toplevel && modelData.toplevel.wayland ? modelData.toplevel.wayland : null
+          paintCursor: false
+          live: root.active
+          constraintSize: Qt.size(Math.max(1, width), Math.max(1, height))
+        }
+
+        Rectangle {
+          anchors.fill: parent
+          visible: !windowCapture.hasContent
+          color: Util.alpha(modelData.activated ? Color.accent : Color.foreground, modelData.activated ? 0.22 : 0.10)
+        }
+
+        Rectangle {
+          anchors.left: parent.left
+          anchors.right: parent.right
+          anchors.top: parent.top
+          height: Math.min(parent.height, Style.space(25))
+          visible: windowCapture.hasContent && parent.height >= Style.space(42)
+          color: Util.alpha(Color.background, 0.72)
+        }
+
         Column {
           anchors.fill: parent
           anchors.margins: Style.space(6)
@@ -176,7 +202,7 @@ Item {
 
           Text {
             width: parent.width
-            visible: parent.parent.height >= Style.space(48)
+            visible: !windowCapture.hasContent && parent.parent.height >= Style.space(48)
             text: modelData.title
             color: Color.muted
             font.family: root.bar ? root.bar.fontFamily : Style.font.family

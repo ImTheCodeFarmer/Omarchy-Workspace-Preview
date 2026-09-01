@@ -4,6 +4,7 @@ set -euo pipefail
 plugin_id="codefarmer.workspace-preview"
 source_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)/plugin"
 target_dir="${HOME}/.config/omarchy/plugins/${plugin_id}"
+backup_dir="${HOME}/.config/omarchy/plugin-backups"
 shell_config="${HOME}/.config/omarchy/shell.json"
 
 if [[ ! -f "${shell_config}" ]]; then
@@ -13,7 +14,8 @@ fi
 
 mkdir -p "$(dirname -- "${target_dir}")"
 if [[ -d "${target_dir}" ]]; then
-  backup="${target_dir}.bak.$(date +%s)"
+  mkdir -p "${backup_dir}"
+  backup="${backup_dir}/${plugin_id}.$(date +%s)"
   cp -a "${target_dir}" "${backup}"
   echo "Backed up existing plugin to ${backup}"
 fi

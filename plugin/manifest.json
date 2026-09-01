@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "id": "codefarmer.workspace-preview",
   "name": "Workspace Preview",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "codefarmer",
-  "description": "Workspace indicators with hover previews",
+  "description": "Workspace indicators with live visual hover previews",
   "kinds": [
     "bar-widget"
   ],
@@ -13,7 +13,7 @@
   },
   "barWidget": {
     "displayName": "Workspace Preview",
-    "description": "Workspace numbers with a live window-layout preview",
+    "description": "Workspace numbers with live visual window previews",
     "category": "Compositor",
     "allowMultiple": false
   },
