@@ -1,5 +1,8 @@
 # Omarchy Workspace Preview
 
+<img width="1043" height="363" alt="image" src="https://github.com/user-attachments/assets/ac052e9a-3c05-4dbe-8d48-2738dab6d377" />
+
+## Overview
 A user-owned Omarchy Shell workspace widget that displays small live visual
 window previews when you hover over a workspace number.
 
@@ -8,6 +11,10 @@ screencopy support. It shows actual window contents in their relative positions,
 including inactive workspaces when supported by the compositor. Application
 class/title cards remain as a fallback when a window cannot be captured. Click
 anywhere in the preview to switch to that workspace.
+
+## Usage Preview
+<img width="2560" height="1440" alt="preview-usage" src="https://github.com/user-attachments/assets/03ce1e9d-3153-41e8-8cf9-9170906cb288" />
+
 
 ## Install
 
