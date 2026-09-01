@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "codefarmer.workspace-preview",
+  "name": "Workspace Preview",
+  "version": "1.0.0",
+  "author": "codefarmer",
+  "description": "Workspace indicators with hover previews",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Workspaces.qml"
+  },
+  "barWidget": {
+    "displayName": "Workspace Preview",
+    "description": "Workspace numbers with a live window-layout preview",
+    "category": "Compositor",
+    "allowMultiple": false
+  },
+  "omarchy": {
+    "clonedFrom": "omarchy.workspaces"
+  }
+}
