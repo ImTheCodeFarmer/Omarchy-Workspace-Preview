@@ -17,10 +17,17 @@ chmod +x install.sh
 ```
 
 The installer copies the plugin to
-`~/.config/omarchy/plugins/codefarmer.workspace-preview`, backs up the current
-plugin under `~/.config/omarchy/plugin-backups` (when present), backs up
-`shell.json`, replaces `omarchy.workspaces` in the bar layout, and asks Omarchy
-Shell to rescan plugins.
+`~/.config/omarchy/plugins/<username>.workspace-preview`, using the username of
+the account running the installer. It rewrites the plugin manifest to the same
+namespaced ID, backs up the current plugin under
+`~/.config/omarchy/plugin-backups` (when present), backs up `shell.json`,
+replaces `omarchy.workspaces` in the bar layout, and asks Omarchy Shell to
+rescan plugins.
+
+For example, user `alex` gets the plugin ID `alex.workspace-preview`. The
+installer does not depend on a particular username. Existing installations
+using the old `codefarmer.workspace-preview` ID are migrated automatically and
+the old plugin files are retained in the backup directory.
 
 Plugin changes hot-reload. To force a reload:
 
@@ -34,5 +41,6 @@ Clone this repository and run `./install.sh`. Omarchy and `jq` must be installed
 
 ## Remove
 
-Change `codefarmer.workspace-preview` back to `omarchy.workspaces` in
-`~/.config/omarchy/shell.json`, then remove the copied plugin directory.
+Change `<username>.workspace-preview` back to `omarchy.workspaces` in
+`~/.config/omarchy/shell.json`, then remove
+`~/.config/omarchy/plugins/<username>.workspace-preview`.

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "codefarmer.workspace-preview",
+  "id": "workspace-preview",
   "name": "Workspace Preview",
-  "version": "1.2.0",
-  "author": "codefarmer",
+  "version": "1.3.0",
+  "author": "ImTheCodeFarmer",
   "description": "Workspace indicators with live visual hover previews",
   "kinds": [
     "bar-widget"
